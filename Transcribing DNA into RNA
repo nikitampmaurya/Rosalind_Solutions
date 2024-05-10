@@ -1,0 +1,20 @@
+#sum 2:Transcribing DNA into RNA
+
+DNA = open("C:\\Users\\Nikita Maurya\\Downloads\\rosalind_rna.txt","r", encoding='unicode_escape') #to import dataset
+DNA = DNA.read() #to read it
+
+NEW = "" #to create RNA string/ to transcribe
+
+for i in DNA: #to read each letter in DNA
+    if i == "A":
+        NEW += "A"
+    elif i == "C":
+        NEW += "C"
+    elif i == "G":
+        NEW += "G"
+    elif i == "T":
+        NEW += "U"
+    else:
+        pass
+
+print(NEW) #to print final rna string
