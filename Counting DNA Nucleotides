@@ -1,0 +1,22 @@
+#sum 1: Counting DNA Nucleotides
+
+DNA = open("C:\\Users\\Nikita Maurya\\Downloads\\rosalind_dna.txt","r", encoding='unicode_escape') #to import dataset
+DNA = DNA.read() #to read it
+#DNA = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
+A = 0 #keep count of nucleotide A
+C = 0 #keep count of nucleotide C
+G = 0 #keep count of nucleotide G
+T = 0 #keep count of nucleotide T
+
+for i in DNA: #to read each letter in DNA
+    if i == "A":
+        A += 1
+    elif i == "C":
+        C += 1
+    elif i == "G":
+        G += 1
+    elif i == "T":
+        T += 1
+    else:
+        pass #to avoid error
+print(A,C,G,T, sep=" ") #to print final answer
