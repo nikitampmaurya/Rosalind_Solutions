@@ -1,0 +1,25 @@
+#sum 3: Complementing a Strand of DNA
+
+DNA = open("C:\\Users\\Nikita Maurya\\Downloads\\rosalind_revc.txt","r", encoding='unicode_escape') 
+DNA = DNA.read()
+
+Comp = ""
+
+for i in DNA:
+    if i == "A":
+        Comp += "T"
+    elif i == "C":
+        Comp += "G"
+    elif i == "G":
+        Comp += "C"
+    elif i == "T":
+        Comp += "A"
+    else:
+        pass
+
+comp1 = [] #make an empty list to extend the compliment DNA
+comp1.extend(Comp) #extend it into the empty list
+comp1 = comp1[::-1] #reverse
+comp1 = "".join(comp1) #then join
+
+print(comp1)
