@@ -1,0 +1,23 @@
+"""
+sum 6: HAMM
+"""
+f = open("C:\\Users\\Nikita Maurya\\Downloads\\rosalind_hamm.txt", "r")
+l=[]
+for x in f:
+  l.append(x)
+#print(l) each string has "\n", so to remove that we 
+
+for i in range(len(l)):
+    l[i] = l[i].replace("\n","")
+    
+#print(l)
+
+dna1 = []
+dna1.extend(l[0])
+dna2 = []
+dna2.extend(l[1])
+count = 0
+for i in range(0,(len(dna1)-1)):
+    if dna1[i] != dna2[i]:
+        count +=1
+print(count)
