@@ -1,0 +1,25 @@
+#sum 5: Gc content
+from Bio import SeqIO
+file_path = "C:\\Users\\Nikita Maurya\\Downloads\\rosalind_gc.txt"
+m = {} #dictionary with list of id and 
+for seq_record in SeqIO.parse(file_path, "fasta"):
+    G = []
+    C = []
+    for i in seq_record:
+        if i == "G":
+            G += i
+        if i == "C":
+            C += i
+
+    GC_content = (len(C) + len(G)) / len(seq_record)
+
+    if seq_record.id not in m:
+        m[seq_record.id] = GC_content
+    else:
+        m[seq_record.id] += GC_content 
+
+#print(m)
+k = max(m, key=m.get) #to get max from dictionary m, where which key has max
+print(k) #to print the key
+v = m[k] #to get value of the key
+print(v*100)
