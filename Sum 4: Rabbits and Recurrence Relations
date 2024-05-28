@@ -1,0 +1,14 @@
+"""
+Sum 4: Rabbits and Recurrence Relations
+"""
+def fibo(n, k):
+   if n == 0:
+       return 0 #in the zeroth month, there are no rabbits
+   elif n == 1:
+       return 1 #in the first month, there are only 1 pair of baby rabbits
+   else:
+       return fibo(n-1, k) + k*fibo(n-2, k) 
+       
+print(fibo(5,3))
+
+#multiplying k with fibo(n-2) because any given month will contain the rabbits that were alive the previous month, plus any new offspring.
